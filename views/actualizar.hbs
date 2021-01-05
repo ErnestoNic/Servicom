@@ -1,0 +1,21 @@
+<h4 class="text-center">Editar oficio</h4> <hr>
+<div class="d-flex justify-content-center">
+        <form action="/admin/oficios/actualizar" method="post" class="w-50">
+                    <div class="form-group">
+                        <label for="nombre">Nombre *</label>
+                        <input type="text" value="{{ nombreOficio }}" name="nombreOficio" class="form-control" required>
+                        
+                        <input type="hidden" name="idOficio" value={{ id }}>
+                        
+                    </div>
+                    <label for="categoria">Categoria *</label>
+                    <select name="idCategoria" required class="form-control">
+                        <option selected disabled>Selecciona categoria</option>
+                        {{#each categorias}}
+                        <option value={{id}}>{{tiposOficio}}</option>
+                        {{/each}}
+
+                    </select>
+                    <button class="btn btn-primary btn-block mt-3">Guardar</button>
+        </form>
+</div>

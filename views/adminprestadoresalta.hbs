@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row align-item-center">
+        <div class="col-8">
+            <form method="POST" action="/admin/prestadores/create" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="AVATAR">Foto de Perfil *</label>
+                    <input type="file" name="imagen" class="form-control">
+               
+
+              
+                   <label for="categoria">Oficio *</label>
+                    <select name="idOficio" required class="form-control">
+                        <option selected disabled>Selecciona oficio</option>
+                        {{#each oficios}}
+                        <option value={{id}}>{{nombreOficio}}</option>
+                        {{/each}}
+
+                    </select>
+                    <label for="categoria">Categoria *</label>
+                    <select name="idCategoria" required class="form-control">
+                        <option selected disabled>Selecciona categoria</option>
+                        {{#each categorias}}
+                        <option value={{id}}>{{tiposOficio}}</option>
+                        {{/each}}
+
+                    </select>
+                    
+               
+            <label for="Matricula">Numero de Matricula</label>
+                    <input type="text" name="matriculas" placeholder="Matricula" class="form-control">
+                </div>
+                <button class="btn btn-primary btn-block">Registrar</button>
+
+
+            </form>
+        </div>
+        </div>
+    </div>
+</div>

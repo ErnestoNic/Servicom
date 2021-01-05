@@ -1,0 +1,102 @@
+<div class="container">
+    <div class="row">
+        <div class="row d-grid gap-2 col-6 mx-auto">
+        <div class="col-6">
+            <button type="button" class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#exampleModalCenter">
+                Alta de oficio
+            </button>
+        </div>
+        <div class="col-6">
+            <button type="button" class="btn btn-outline-warning btn-lg" data-toggle="modal" data-target="#exampleModalCenter2">
+                ¿Nueva Categoria?
+            </button>
+        </div>
+
+        </div>
+        
+        <div class="col-12 mt-5">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre Oficio</th>
+                        <th>Nombre Categoria</th>
+                        <th>Editar</th>
+                        <th>Borrar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each oficios}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{nombreOficio}}</td>
+                        <td>{{tiposOficio}}</td>
+                        <td><a href="/admin/oficios/editar/{{id}}"><i class="fas fa-pencil-alt text-primary" ></i></a></td>
+                        <td><a href="/admin/oficios/delete/{{id}}"><i class="fas fa-trash text-danger"></i></a></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+{{!modal para oficios}}
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">¿Nuevo Oficio?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/admin/oficios/create" method="post">
+                    <div class="form-group">
+                        <label for="nombre">Nombre *</label>
+                        <input type="text" required placeholder="Nombre Oficio" name="nombreOficio" class="form-control">
+                    </div>
+                    <label for="categoria">Categoria *</label>
+                    <select name="idCategoria" required class="form-control">
+                        <option selected disabled>Selecciona categoria</option>
+                        {{#each categorias}}
+                        <option value={{id}}>{{tiposOficio}}</option>
+                        {{/each}}
+
+                    </select>
+                    <button class="btn btn-primary btn-block">Guardar</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{{!modal para categorias}}
+
+<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Nueva Categoria</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/admin/categorias/create" method="post">
+                    <div class="form-group">
+                        <label for="nombre">Nombre *</label>
+                        <input type="text" required placeholder="Nombre Categoria" name="tiposOficio" class="form-control">
+                    </div>
+                    <button class="btn btn-warning btn-block">Guardar</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+
+<div class="container">
+<nav class="navbar navbar-light">
+  <div class="container-fluid justify-content-center">
+   
+            <form class="d-flex">
+                 <input class="form-control me-2 mr-2" type="search" placeholder="¿Qué Buscas?" >
+                    <button class="btn btn-outline-success" id={{nombreOficio}} type="submit">Buscar</button>
+            </form>
+    </div>
+</nav>
+
+</div>
+
+
+
+<div class="container mt-4">
+    <div class="row">
+        {{#each resultOficios}}
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="/images/descarga.jpg" id= {{nombreOficio}} class="card-img-top" alt="...">
+                    <div class="card-body">
+                         <h5 class="card-title">{{nombreOficio}}</h5>{{!-> interpolacion que permite traer el nombre del curso desde un tabla sql y se expresa entre llaves}}
+                    <p class="card-text">{{tiposOficio}}</p>
+                     <a href="/prestadores/{{id}}" class="btn btn-primary btn-block">Ver Prestadores</a>{{!-> me lleva a la vista single por id de los cursos existentes}}
+                    </div>
+                </div>
+        
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+

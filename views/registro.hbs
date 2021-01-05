@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row justify-content-center h-100 align-items-center">
+        <div class="col-8">
+          <form method="POST" action="/registro/create"> {{!--metodo es como y action donde--}}
+        
+            <div class="form-group">
+                <label id= "nombre">Nombre</label>
+               <input type="text" name="nombre" class="form-control" placeholder="Nombre">  
+            </div>
+            <div class="form-group">
+                <label id= "apellido">Apellido</label>
+               <input type="text" name="apellido" class="form-control" placeholder="Apellido">  
+            </div>
+            <div class="form-group">
+                <label id= "cuit">Cuit</label>
+               <input type="text" name="cuit" class="form-control" placeholder="Cuit/Cuil">  
+            </div>
+             <div class="form-group">
+                <label id= "domicilio">Domicilio</label>
+               <input type="text" name="domicilio" class="form-control" placeholder="Calle">  
+            </div>
+             <div class="form-group">
+                <label id= "altura">Altura</label>
+               <input type="altura" name="altura" class="form-control" placeholder="Número/Altura">  
+            </div>
+            <div class="form-group">
+                <label id= "email">Correo</label>
+               <input type="email" name="email" class="form-control" placeholder="tuemail@email.com">  
+            </div>
+            <div class="form-group">
+                <label id= "telefono">Telefono</label>
+               <input type="number" name="telefono" class="form-control" placeholder="2611234567">  
+            </div>
+            <div class="form-group">
+                <label id= "usuario">Usuario</label>
+               <input type="text" name="usuario" class="form-control" placeholder="UsuarioNick">  
+            </div>
+            <div class="form-group">
+                <label id= "password">Contraseña</label>
+               <input type="password" name="password" class="form-control" placeholder="****">  
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Registrate</button>
+           
+            </form>
+            <span>{{message}}</span>
+        </div>
+        
+    </div>
+    
+</div>

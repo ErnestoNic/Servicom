@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h4>USUARIOS REGISTRADOS</h4>
+            <table class="table table-hover table-responsive mt-3 text-center">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Cuit</th>
+                        <th>Domicilio</th>
+                        <th>Altura</th>
+                        <th>Email</th>
+                        <th>Telefono</th>
+                        <th>Actualizar Prestador</th>
+                        <th>Eliminar Prestador</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each personas}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{nombre}}</td>
+                        <td>{{apellido}}</td>
+                        <td>{{cuit}}</td>
+                        <td>{{domicilio}}</td>
+                        <td>{{altura}}</td>
+                        <td>{{email}}</td>
+                        <td>{{telefono}}</td>
+                        <td><a href="/admin/prestadores/create/{{id}}"><i
+                                    class="fas fa-pencil-alt text-primary pr-3 pl-3"></i></a></td>
+                        <td><i class="fas fa-trash text-danger pr-3 pl-3" onclick="eliminar({{id}})"
+                                style="cursor: pointer;"></i>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    const eliminar = (id) => {
+        console.log(id);
+        fetch(`/admin/prestadores/baja/${id}`, {
+            method: 'GET'
+
+        });
+    }
+</script>
